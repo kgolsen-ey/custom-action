@@ -1,0 +1,10 @@
+name: 'Enforce ESLint configuration'
+description: 'Enforces ESLint configuration in .js, .ts files'
+inputs:
+  ignore-tests:
+    description: 'Ignore test/ or tests/ directories'
+    required: false
+    default: 'false'
+runs:
+  using: 'node12'
+  main: 'index.js'

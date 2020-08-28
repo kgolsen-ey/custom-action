@@ -1,0 +1,37 @@
+{
+  "name": "custom-action",
+  "version": "1.0.0",
+  "description": "A simple custom GitHub Action",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint-no-tests": "eslint . --ignore-pattern test",
+    "prepare": "ncc build index.js -o dist --source-map",
+    "test": "mocha",
+    "all": "npm run lint && npm run prepare && npm run test",
+    "all-no-tests": "npm run lint-no-tests && npm run prepare && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kgolsen-ey/custom-action.git"
+  },
+  "keywords": [],
+  "author": "Kyle Olsen <kyle.g.olsen@ey.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kgolsen-ey/custom-action/issues"
+  },
+  "homepage": "https://github.com/kgolsen-ey/custom-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.5",
+    "@actions/github": "^4.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.24.0",
+    "chai": "^4.2.0",
+    "mocha": "^8.1.2"
+  }
+}
