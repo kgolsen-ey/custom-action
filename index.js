@@ -9,7 +9,7 @@ async function run() {
   try {
     const ignoreTests = core.getInput('ignore-tests')
     const context = github.context
-    console.log(`context: ${context}`)
+    console.log(`context: ${JSON.stringify(context)}`)
   } catch (error) {
     core.setFailed(error.message)
   }
